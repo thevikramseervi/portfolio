@@ -12,11 +12,11 @@ const cfProfile = competitiveProgramming.profiles.find(
 )!;
 
 const highlights = [
-  `${experience[0].program} Intern`,
+  `${experience[0].orgShort} Intern`,
   `${competitiveProgramming.problemsSolved} Problems Solved`,
   `CGPA ${profile.cgpa} / 10`,
   `${cfProfile.platform} ${cfProfile.rank} · ${cfProfile.peakRating}`,
-  achievements[0].title,
+  `${achievements[0].headline} — ${achievements[0].subtitle}`,
 ];
 
 export default function ResumePage() {

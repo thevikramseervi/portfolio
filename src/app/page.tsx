@@ -2,6 +2,7 @@ import { Container } from "@/components/layout/container";
 import { Hero } from "@/components/sections/hero";
 import { Experience } from "@/components/sections/experience";
 import { Projects } from "@/components/sections/projects";
+import { Skills } from "@/components/sections/skills";
 import { Education } from "@/components/sections/education";
 import { CompetitiveProgramming } from "@/components/sections/competitive-programming";
 import { Certifications } from "@/components/sections/certifications";
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <Experience />
       <Projects />
+      <Skills />
       <Education />
       <CompetitiveProgramming />
       <Certifications />

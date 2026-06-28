@@ -28,6 +28,7 @@ export interface Education {
 
 export interface ExperienceEntry {
   org: string;
+  orgShort: string;
   program: string;
   role: string;
   duration: string;
@@ -35,6 +36,7 @@ export interface ExperienceEntry {
   description: string;
   highlights: string[];
   tech: string[];
+  linkedProject?: string;
 }
 
 export interface Project {
@@ -45,6 +47,7 @@ export interface Project {
   github: string;
   live: string | null;
   achievement?: string;
+  image?: string;
 }
 
 export interface CompetitiveProgrammingEntry {
@@ -52,6 +55,7 @@ export interface CompetitiveProgrammingEntry {
   handle: string;
   url: string;
   peakRating: number;
+  problemsSolved?: number;
   rank?: string;
 }
 
@@ -61,7 +65,9 @@ export interface CompetitiveProgramming {
 }
 
 export interface Achievement {
-  title: string;
+  icon: string;
+  headline: string;
+  subtitle: string;
   detail?: string;
 }
 
@@ -73,13 +79,9 @@ export interface Certification {
   inProgress?: boolean;
 }
 
-export interface TechnicalSkills {
-  languages: string[];
-  frontend: string[];
-  backend: string[];
-  database: string[];
-  tools: string[];
-  coreCS: string[];
+export interface SkillGroup {
+  label: string;
+  skills: string[];
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -88,7 +90,7 @@ export const profile: Profile = {
   name: "B Vikram Seervi",
   role: "Computer Science and Engineering Student",
   headline:
-    "Computer Science and Engineering student focused on full-stack development, backend systems, and competitive programming.",
+    "C++ programmer and full-stack developer with Samsung R&D internship experience, building backend systems, competitive programming solutions, and production web applications.",
   cgpa: 9.08,
   location: "Bengaluru, Karnataka, India",
 };
@@ -105,7 +107,7 @@ export const education: Education = {
   degree: "B.E. in Computer Science and Engineering",
   institution: "Cambridge Institute of Technology",
   location: "Bengaluru, Karnataka, India",
-  duration: "2023–2027",
+  duration: "2023-2027",
   expectedGraduation: "2027",
   cgpa: 9.08,
   coursework: [
@@ -120,19 +122,20 @@ export const education: Education = {
 export const experience: ExperienceEntry[] = [
   {
     org: "Samsung R&D Institute India",
+    orgShort: "Samsung R&D",
     program: "Samsung PRISM",
     role: "Software Engineer Intern",
-    duration: "Nov 2025 – Mar 2026",
+    duration: "Nov 2025 - Mar 2026",
     project: "AttendEase — Attendance, Leave & Payroll Platform",
     description:
       "Built AttendEase, a full-stack attendance, leave management, and payroll automation platform.",
     highlights: [
-      "Designed authentication and authorization workflows.",
-      "Implemented role-based access control.",
-      "Built backend APIs and database-backed workflows.",
-      "Worked on employee attendance, leave tracking, and payroll automation.",
+      "Implemented JWT authentication and RBAC for employee, manager, and admin roles.",
+      "Designed PostgreSQL schema supporting attendance, leave, and payroll workflows.",
+      "Built REST APIs for attendance tracking, leave approval, and payroll management."
     ],
     tech: ["React", "TypeScript", "NestJS", "PostgreSQL", "Prisma"],
+    linkedProject: "AttendEase",
   },
 ];
 
@@ -149,7 +152,8 @@ export const projects: Project[] = [
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Redis", "OpenRouter AI"],
     github: "https://github.com/Balasubramani2004/JanaDhristi",
     live: null,
-    achievement: "1st Place – Amity University Hackathon",
+    achievement: "🏆 1st Place - Amity University Hackathon",
+    image: "/projects/janadhristi.png",
   },
   {
     name: "AttendEase",
@@ -187,6 +191,7 @@ export const competitiveProgramming: CompetitiveProgramming = {
       handle: "vikramseervi",
       url: "https://codeforces.com/profile/vikramseervi",
       peakRating: 1238,
+      problemsSolved: 730,
       rank: "Pupil",
     },
     {
@@ -194,12 +199,15 @@ export const competitiveProgramming: CompetitiveProgramming = {
       handle: "vikramseervi",
       url: "https://www.codechef.com/users/vikramseervi",
       peakRating: 1486,
+      problemsSolved: 130,
+      rank: "2★",
     },
     {
       platform: "LeetCode",
       handle: "vikramseervi",
       url: "https://leetcode.com/u/vikramseervi/",
       peakRating: 1531,
+      problemsSolved: 48,
     },
     {
       platform: "AtCoder",
@@ -213,14 +221,20 @@ export const competitiveProgramming: CompetitiveProgramming = {
 
 export const achievements: Achievement[] = [
   {
-    title: "1st Place — Amity University Hackathon (2026)",
-    detail: "Project: JanaDhristi",
+    icon: "🏆",
+    headline: "1st Place",
+    subtitle: "Amity University Hackathon 2026",
+    detail: "JanaDhristi",
   },
   {
-    title: "Samsung PRISM Internship Completion",
+    icon: "🔬",
+    headline: "Samsung R&D",
+    subtitle: "Software Engineer Intern",
   },
   {
-    title: "CGPA 9.08 / 10",
+    icon: "🎓",
+    headline: "9.08 / 10",
+    subtitle: "Current CGPA",
   },
 ];
 
@@ -248,17 +262,25 @@ export const certifications: Certification[] = [
   },
 ];
 
-export const technicalSkills: TechnicalSkills = {
-  languages: ["C++", "Python", "JavaScript", "TypeScript", "SQL"],
-  frontend: ["React", "Next.js", "Tailwind CSS"],
-  backend: ["Node.js", "Express.js", "NestJS", "FastAPI"],
-  database: ["PostgreSQL", "Prisma", "SQLAlchemy", "Neon"],
-  tools: ["Git", "GitHub", "Linux", "Docker"],
-  coreCS: [
-    "Data Structures and Algorithms",
-    "DBMS",
-    "Operating Systems",
-    "Computer Networks",
-    "OOP",
-  ],
-};
+export const skillGroups: SkillGroup[] = [
+  {
+    label: "Languages",
+    skills: ["C++", "Python", "TypeScript", "SQL"],
+  },
+  {
+    label: "Backend",
+    skills: ["FastAPI", "Node.js", "Express"],
+  },
+  {
+    label: "Frontend",
+    skills: ["React", "Next.js", "Tailwind"],
+  },
+  {
+    label: "Database",
+    skills: ["PostgreSQL", "Prisma"],
+  },
+  {
+    label: "Tools",
+    skills: ["Git", "Docker", "Linux"],
+  },
+];
