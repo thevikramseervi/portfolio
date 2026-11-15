@@ -132,7 +132,7 @@ export const experience: ExperienceEntry[] = [
     highlights: [
       "Implemented JWT authentication and RBAC for employee, manager, and admin roles.",
       "Designed PostgreSQL schema supporting attendance, leave, and payroll workflows.",
-      "Built REST APIs for attendance tracking, leave approval, and payroll management."
+      "Built REST APIs for attendance tracking, leave approval, and payroll management.",
     ],
     tech: ["React", "TypeScript", "NestJS", "PostgreSQL", "Prisma"],
     linkedProject: "AttendEase",
@@ -149,7 +149,14 @@ export const projects: Project[] = [
       "Integrated AI-powered data analysis using OpenRouter.",
       "Implemented Redis caching for efficient data access.",
     ],
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Redis", "OpenRouter AI"],
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "OpenRouter AI",
+    ],
     github: "https://github.com/Balasubramani2004/JanaDhristi",
     live: null,
     achievement: "🏆 1st Place - Amity University Hackathon",
@@ -190,16 +197,16 @@ export const competitiveProgramming: CompetitiveProgramming = {
       platform: "Codeforces",
       handle: "vikramseervi",
       url: "https://codeforces.com/profile/vikramseervi",
-      peakRating: 1238,
-      problemsSolved: 730,
+      peakRating: 1239,
+      problemsSolved: 875,
       rank: "Pupil",
     },
     {
       platform: "CodeChef",
       handle: "vikramseervi",
       url: "https://www.codechef.com/users/vikramseervi",
-      peakRating: 1486,
-      problemsSolved: 130,
+      peakRating: 1489,
+      problemsSolved: 154,
       rank: "2★",
     },
     {
@@ -207,16 +214,17 @@ export const competitiveProgramming: CompetitiveProgramming = {
       handle: "vikramseervi",
       url: "https://leetcode.com/u/vikramseervi/",
       peakRating: 1531,
-      problemsSolved: 48,
+      problemsSolved: 86,
     },
     {
       platform: "AtCoder",
       handle: "vikramseervi",
       url: "https://atcoder.jp/users/vikramseervi",
       peakRating: 346,
+      problemsSolved: 48,
     },
   ],
-  problemsSolved: "900+",
+  problemsSolved: "1100+",
 };
 
 export const achievements: Achievement[] = [

@@ -63,11 +63,11 @@ function ProjectCardContent({ project }: { project: Project }) {
         </ul>
       )}
 
-      <div className="flex flex-wrap gap-1.5">
+      <div className="flex flex-wrap gap-2">
         {project.tech.map((t) => (
           <span
             key={t}
-            className="rounded border border-border px-2 py-0.5 font-mono text-xs text-muted-foreground"
+            className="rounded-md border border-border/50 bg-muted/20 px-2.5 py-1 font-mono text-sm text-foreground/80"
           >
             {t}
           </span>
